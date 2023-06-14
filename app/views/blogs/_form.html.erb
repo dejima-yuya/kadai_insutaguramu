@@ -1,4 +1,4 @@
-<%= form_with(model: blog) do |form| %>
+<%= form_with(model: blog, local: true, url:confirm_blogs_path) do |form| %>
   <% if blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
@@ -13,7 +13,9 @@
 
   <div class="field">
     <%= form.label :blog_image %>
+    <%= image_tag(blog.blog_image.url) if blog.blog_image && blog.blog_image.url %>
     <%= form.file_field :blog_image %>
+    <%= form.hidden_field :blog_image_cache %>
   </div>
 
   <div class="field">
