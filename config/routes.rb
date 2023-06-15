@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :blogs
   resources :users
+  resources :sessions
   resources :favorites
 
   resources :blogs do
