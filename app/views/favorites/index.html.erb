@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Favorite Blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Blog image</th>
+      <th>User</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorites.each do |favorite| %>
+      <tr>
+        <td><%= image_tag favorite.blog.blog_image.url %></td>
+        <td><%= favorite.blog.user.name %></td>
+        <td><%= favorite.blog.content %></td>
+        <td><%= link_to 'お気に入り解除する', favorite_path(id: favorite.id), method: :delete, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', blogs_path %>

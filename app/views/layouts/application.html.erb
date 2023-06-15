@@ -16,8 +16,13 @@
     <% end %>
 
     <% if logged_in? %>
-      <%= link_to "Profile", user_path(current_user.id) %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
       <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      <table>
+        <td><%= User %></td>
+        <td><%= current_user.name %></td>
+        <td><%= image_tag current_user.profile_image.url, size: "50x50" %></td>
+      </table>
     <% else %>
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>
