@@ -3,4 +3,5 @@ class Blog < ApplicationRecord
   validates :content, presence: true
   mount_uploader :blog_image, ImageUploader
   belongs_to :user
+  has_many :favorites, dependent: :destroy
 end
