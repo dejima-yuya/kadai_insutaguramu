@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :favorites
+  root to: 'blogs#index'
 
   resources :blogs do
     collection do
