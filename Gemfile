@@ -62,3 +62,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'rexml'
+
+group :development do
+  gem 'letter_opener_web'
+end

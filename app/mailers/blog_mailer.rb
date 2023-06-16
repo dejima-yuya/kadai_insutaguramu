@@ -1,7 +1,7 @@
 class BlogMailer < ApplicationMailer
-  def confirmation_mail(confirmation)
-    @confirmation = confirmation
+  def blog_mail(blog)
+    @blog = blog
 
-    mail to: @confirmation.email, subject: "お問い合わせの確認メール"
+    mail to: @blog.user.email, subject: "ブログ投稿の確認メール"
   end
 end
