@@ -3,9 +3,6 @@ class UsersController < ApplicationController
   skip_before_action :login_required, only: [:index, :show, :new, :create]
 
   # GET /users or /users.json
-  def index
-    @users = User.all
-  end
 
   # GET /users/1 or /users/1.json
   def show
